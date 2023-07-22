@@ -18,26 +18,20 @@
 }
 
 #calculator {
-  background-color: #3b3b3b;
+  background-color: grey;
   grid-template-rows: 1fr 5fr;
-  width: 33.3%;
-  max-width: 480px;
-  max-height: 480px;
-  min-width: 300px;
-  margin: 0.5em auto;
-  font-size: 1.5em;
+  width: 30vw;
+  margin: 5vh auto;
+  font-size: 2.5vh;
   gap: var(--grid-gap);
   padding: var(--btn-padding);
-  border-radius: 1.8em;
 }
 
 #calculator__display {
-  background-color: #858693;
+  background-color: white;
   justify-content: end;
   font-size: 2em;
-  border-radius: 0.6em;
   padding: 0.3em;
-  vertical-align: middle;
 }
 
 #calculator__keypad {
@@ -68,7 +62,6 @@
 .calculator__grey-btn,
 .calculator__orange-btn {
   border: 0;
-  border-radius: var(--btn-border-radius);
   padding: var(--btn-padding);
   justify-content: center;
   cursor: pointer;
@@ -78,11 +71,11 @@
 }
 
 .calculator__grey-btn {
-  background-color: #e0e0e0;
+  background-color: rgb(173, 148, 148);
 }
 
 .calculator__orange-btn {
-  background-color: #f5913e;
+  background-color: #d16b18;
 }
 
 button[name='0'] {
