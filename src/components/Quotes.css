@@ -3,7 +3,7 @@
 #quote__container {
   width: 35vw;
   margin: 1em auto;
-  font-family: 'Playfair Display';
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
 }
 
 #quote {
