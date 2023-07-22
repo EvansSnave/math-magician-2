@@ -3,23 +3,23 @@ import PropTypes from 'prop-types';
 import calculate from './logic/calculate';
 
 function Calculator() {
-  const [CURRENT_DATA, UPDATED_DATA] = useState({});
+  const [dataNow, newData] = useState({});
 
-  function updateData(event) {
-    const BUTTON_DATA = event.target.name;
-    UPDATED_DATA(calculate(CURRENT_DATA, BUTTON_DATA));
+  function getData(event) {
+    const button = event.target.name;
+    newData(calculate(dataNow, button));
   }
 
-  function Button({ nameAndValue, className }) {
+  function Button({ values, className }) {
     return (
-      <button type="button" name={nameAndValue} className={className} onClick={updateData}>
-        {nameAndValue}
+      <button type="button" name={values} className={className} onClick={getData}>
+        {values}
       </button>
     );
   }
 
   Button.propTypes = {
-    nameAndValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    values: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     className: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   };
 
@@ -32,62 +32,62 @@ function Calculator() {
   };
 
   function UtilityPad() {
-    const UTILITY_BUTTONS = ['AC', '+/-', '%'];
-    const OUTPUT = [];
+    const buttonsUser = ['AC', '+/-', '%'];
+    const results = [];
 
-    for (let i = 0; i < UTILITY_BUTTONS.length; i += 1) {
-      OUTPUT.push(<Button key={UTILITY_BUTTONS[i]} nameAndValue={UTILITY_BUTTONS[i]} className="calculator__grey-btn" />);
+    for (let i = 0; i < buttonsUser.length; i += 1) {
+      results.push(<Button key={buttonsUser[i]} values={buttonsUser[i]} className="calculator__grey-btn" />);
     }
 
-    return OUTPUT;
+    return results;
   }
 
   function NumericPad() {
-    const OUTPUT = [];
-    const NUMERIC_PAD_ROWS = [
+    const results = [];
+    const rows = [
       [7, 8, 9],
       [4, 5, 6],
       [1, 2, 3],
       [0, '.'],
     ];
 
-    for (let row = 0; row < NUMERIC_PAD_ROWS.length; row += 1) {
-      for (let number = 0; number < NUMERIC_PAD_ROWS[row].length; number += 1) {
-        OUTPUT.push(<Button key={NUMERIC_PAD_ROWS[row][number]} nameAndValue={NUMERIC_PAD_ROWS[row][number]} className="calculator__grey-btn" />);
+    for (let row = 0; row < rows.length; row += 1) {
+      for (let number = 0; number < rows[row].length; number += 1) {
+        results.push(<Button key={rows[row][number]} values={rows[row][number]} className="calculator__grey-btn" />);
       }
     }
 
-    return OUTPUT;
+    return results;
   }
 
   function OperatorsPad() {
-    const OPERATOR_BUTTONS = ['÷', 'x', '+', '-', '='];
-    const OUTPUT = [];
+    const operations = ['÷', 'x', '+', '-', '='];
+    const results = [];
 
-    for (let i = 0; i < OPERATOR_BUTTONS.length; i += 1) {
-      OUTPUT.push(<Button key={OPERATOR_BUTTONS[i]} nameAndValue={OPERATOR_BUTTONS[i]} className="calculator__orange-btn" />);
+    for (let i = 0; i < operations.length; i += 1) {
+      results.push(<Button key={operations[i]} values={operations[i]} className="calculator__orange-btn" />);
     }
 
-    return OUTPUT;
+    return results;
   }
 
-  function resultBuilder() {
-    if (!CURRENT_DATA.total) {
-      CURRENT_DATA.total = '';
+  function creater() {
+    if (!dataNow.total) {
+      dataNow.total = '';
     }
 
-    if (!CURRENT_DATA.operation) {
-      CURRENT_DATA.operation = '';
+    if (!dataNow.operation) {
+      dataNow.operation = '';
     }
 
-    if (!CURRENT_DATA.next) {
-      CURRENT_DATA.next = '';
+    if (!dataNow.next) {
+      dataNow.next = '';
     }
 
-    return CURRENT_DATA.total + CURRENT_DATA.operation + CURRENT_DATA.next;
+    return dataNow.total + dataNow.operation + dataNow.next;
   }
 
-  const RESULT = resultBuilder();
+  const RESULT = creater();
 
   return (
     <div id="calculator" className="grid">
