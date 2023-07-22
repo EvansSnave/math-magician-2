@@ -9,11 +9,11 @@ export default function Quotes() {
     const fetchQuote = async () => {
       setIsLoading(true);
       try {
-        const res = await fetch('https://api.api-ninjas.com/v1/quotes?category=imagination', {
+        const response = await fetch('https://api.api-ninjas.com/v1/quotes?category=imagination', {
           headers: { 'X-Api-Key': 'c6+6sinGjqmIHZuM/qiWoQ==EzM57w8WU5zGm8HX' },
         });
-        const json = await res.json();
-        setQuote(json);
+        const resp = await response.json();
+        setQuote(resp);
       } catch {
         setHasError(true);
       }
@@ -25,7 +25,7 @@ export default function Quotes() {
   if (hasError) {
     return (
       <div id="quote__container">
-        <p id="quote__error">Something went wrong! Please reload the page.</p>
+        <p id="quote__error">Something unexpected happened. Error</p>
       </div>
     );
   }
@@ -33,7 +33,7 @@ export default function Quotes() {
   if (isLoading || !quote) {
     return (
       <div id="quote__container">
-        <p id="quote__loading">Loading...</p>
+        <p id="quote__loading">Getting data</p>
       </div>
     );
   }
