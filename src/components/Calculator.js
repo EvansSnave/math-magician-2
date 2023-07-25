@@ -4,7 +4,6 @@ import calculate from './logic/calculate';
 
 function Calculator() {
   const [dataNow, newData] = useState({});
-
   function getData(event) {
     const button = event.target.name;
     newData(calculate(dataNow, button));
@@ -33,7 +32,7 @@ function Calculator() {
 
   function UtilityPad() {
     const buttonsUser = ['AC', '+/-', '%'];
-    
+
     const results = [];
 
     for (let i = 0; i < buttonsUser.length; i += 1) {
