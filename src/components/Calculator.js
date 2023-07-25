@@ -33,6 +33,7 @@ function Calculator() {
 
   function UtilityPad() {
     const buttonsUser = ['AC', '+/-', '%'];
+    
     const results = [];
 
     for (let i = 0; i < buttonsUser.length; i += 1) {
