@@ -1,0 +1,18 @@
+* {
+  list-style: none;
+  text-decoration: none;
+}
+
+.list-pages,
+.navigator {
+  display: flex;
+}
+
+.navigator {
+  justify-content: space-between;
+  padding: 2vw;
+}
+
+.separator {
+  margin: 0 1vw;
+}
