@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+
+#quote__container {
+  width: 35vw;
+  margin: 1em auto;
+  margin-top: 20vw;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+}
+
+#quote {
+  font-family: inherit;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+#quote__author {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 2em;
+}
+
+#quote__loading,
+#quote__error {
+  font-family: inherit;
+  text-align: left;
+}
