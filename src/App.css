@@ -3,6 +3,10 @@
   text-decoration: none;
 }
 
+body {
+  background-color: rgb(245, 195, 195);
+}
+
 .list-pages,
 .navigator {
   display: flex;
@@ -11,8 +15,21 @@
 .navigator {
   justify-content: space-between;
   padding: 2vw;
+  background-color: rgb(155, 226, 226);
 }
 
 .separator {
   margin: 0 1vw;
+}
+
+.homeText {
+  margin: 0 10vw;
+}
+
+.welcome {
+  margin: 1vw 0 3vw 0;
+}
+
+.welcome-text {
+  font-size: x-large;
 }

@@ -86,3 +86,7 @@ button[name='0'] {
   box-shadow: 0 0 0 0 #fff;
   opacity: 0.7;
 }
+
+.calculator-div {
+  margin: 0 7vw;
+}
