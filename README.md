@@ -1,7 +1,6 @@
 <a name="readme-top"></a>
 
 <div align="center">
-    <img src="./src/assets/media/Math magicians-icon.png" alt="Math magicians" width="150"  height="auto" />
     <br>
     <h1><b>Math magicians</b></h1>
 </div>
